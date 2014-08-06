@@ -15,6 +15,8 @@ BuildRequires:	cmake(Qt5)
 BuildRequires:	cmake(XCB)
 BuildRequires:	cmake(X11)
 BuildRequires:	pkgconfig
+BuildRequires:	pkgconfig(xrandr)
+BuildRequires:	pkgconfig(xcb-randr)
 BuildRequires:	cmake(X11_XCB)
 BuildRequires:	qt5-devel
 BuildRequires:	cmake
