@@ -1,14 +1,15 @@
 %define libname %{mklibname KF5Screen 5}
 %define devname %{mklibname KF5Screen -d}
+%define major %(echo %{version} |cut -d. -f1-3)
 
 Summary:	Library for dealing with screen parameters
 Name:		libkscreen5
-Version:	5.0.95
+Version:	5.1.0.1
 Release:	1
 License:	LGPL
 Group:		System/Libraries
 Url:		http://kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{version}/libkscreen-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{major}/libkscreen-%{version}.tar.xz
 
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt5)
@@ -21,6 +22,7 @@ BuildRequires:	cmake(X11_XCB)
 BuildRequires:	qt5-devel
 BuildRequires:	cmake
 BuildRequires:	cmake(Qt5X11Extras)
+BuildRequires:	ninja
 
 Requires:	%{libname} = %{EVRD}
 
@@ -51,12 +53,12 @@ Development files for %{name}
 #----------------------------------------------------------------------------
 
 %prep
-%setup -qn libkscreen-%{version}
+%setup -qn libkscreen-%{major}
 
 %build
-%cmake
-%make
+%cmake -G Ninja
+ninja
 
 %install
-%makeinstall_std -C build
+DESTDIR="%{buildroot}" ninja -C build install
 
