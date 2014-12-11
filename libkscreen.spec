@@ -33,7 +33,7 @@ Requires:	%{libname} = %{EVRD}
 Library for dealing with screen parameters
 
 %files
-%{_libdir}/plugins/kf5/kscreen
+%{_libdir}/qt5/plugins/kf5/kscreen
 
 %package -n %{devname}
 Summary:	Development files for %{name}
@@ -49,7 +49,7 @@ Development files for %{name}
 %{_libdir}/cmake/KF5Screen
 %{_libdir}/libKF5Screen.so
 %{_libdir}/pkgconfig/*.pc
-%{_prefix}/mkspecs/modules/*
+%{_libdir}/qt5/mkspecs/modules/*
 
 #----------------------------------------------------------------------------
 
@@ -57,7 +57,8 @@ Development files for %{name}
 %setup -qn libkscreen-%{major}
 
 %build
-%cmake -G Ninja
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 ninja
 
 %install
