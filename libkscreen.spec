@@ -5,33 +5,32 @@
 
 Summary:	Library for dealing with screen parameters
 Name:		libkscreen5
-Version:	5.2.1
+Version:	5.2.2
 Release:	1
 License:	LGPL
 Group:		System/Libraries
 Url:		http://kde.org/
 Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/libkscreen-%{version}.tar.xz
-
-BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(Qt5)
-BuildRequires:	cmake(XCB)
-BuildRequires:	cmake(X11)
-BuildRequires:	pkgconfig
-BuildRequires:	pkgconfig(xrandr)
-BuildRequires:	pkgconfig(xcb-randr)
-BuildRequires:	cmake(X11_XCB)
-BuildRequires:	qt5-devel
 BuildRequires:	cmake
-BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	ninja
-
+BuildRequires:	cmake(ECM)
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5DBus)
+BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Test)
+BuildRequires:	pkgconfig(Qt5X11Extras)
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xcb)
+BuildRequires:	pkgconfig(xcb-randr)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(xrandr)
 Requires:	%{libname} = %{EVRD}
 
 %dependinglibpackage KF5Screen %{major}
 %{_libdir}/libKF5Screen.so.%{version}
 
 %description
-Library for dealing with screen parameters
+Library for dealing with screen parameters.
 
 %files
 %{_libdir}/qt5/plugins/kf5/kscreen
@@ -43,7 +42,7 @@ Group:		Development/KDE and Qt
 Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
-Development files for %{name}
+Development files for %{name}.
 
 %files -n %{devname}
 %{_includedir}/KF5/KScreen
