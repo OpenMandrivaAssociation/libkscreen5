@@ -5,14 +5,12 @@
 
 Summary:	Library for dealing with screen parameters
 Name:		libkscreen5
-Version:	5.2.2
+Version:	5.2.95
 Release:	1
 License:	LGPL
 Group:		System/Libraries
 Url:		http://kde.org/
 Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%(echo %{version} |cut -d. -f1-3)/libkscreen-%{version}.tar.xz
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5DBus)
@@ -56,12 +54,10 @@ Development files for %{name}.
 
 %prep
 %setup -qn libkscreen-%{version}
-
+%cmake_kde5
 %build
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
-ninja
+%ninja
 
 %install
-DESTDIR="%{buildroot}" ninja -C build install
+%ninja_install -C build
 
