@@ -6,7 +6,7 @@
 Summary:	Library for dealing with screen parameters
 Name:		libkscreen5
 Version:	5.5.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		System/Libraries
 Url:		http://kde.org/
@@ -33,6 +33,7 @@ Library for dealing with screen parameters.
 %files
 %{_libdir}/qt5/plugins/kf5/kscreen
 %{_libdir}/libexec/kf5/kscreen_backend_launcher
+%{_datadir}/dbus-1/services/org.kde.kscreen.service
 
 %package -n %{devname}
 Summary:	Development files for %{name}
@@ -49,7 +50,6 @@ Development files for %{name}.
 %{_libdir}/libKF5Screen.so
 %{_libdir}/pkgconfig/*.pc
 %{_libdir}/qt5/mkspecs/modules/*
-%{_datadir}/dbus-1/services/org.kde.kscreen.service
 
 #----------------------------------------------------------------------------
 
@@ -62,4 +62,3 @@ Development files for %{name}.
 
 %install
 %ninja_install -C build
-
