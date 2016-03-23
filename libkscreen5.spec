@@ -1,4 +1,4 @@
-%define major 6
+%define major 7
 %define libname %{mklibname KF5Screen %{major}}
 %define devname %{mklibname KF5Screen -d}
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
