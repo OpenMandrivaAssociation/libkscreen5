@@ -5,8 +5,8 @@
 
 Summary:	Library for dealing with screen parameters
 Name:		libkscreen5
-Version:	5.6.0
-Release:	3
+Version:	5.6.1
+Release:	1
 License:	LGPL
 Group:		System/Libraries
 Url:		http://kde.org/
