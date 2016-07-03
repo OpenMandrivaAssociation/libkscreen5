@@ -5,7 +5,7 @@
 
 Summary:	Library for dealing with screen parameters
 Name:		libkscreen5
-Version:	5.6.5
+Version:	5.7.0
 Release:	1
 License:	LGPL
 Group:		System/Libraries
@@ -32,6 +32,7 @@ Requires:	%{libname} = %{EVRD}
 Library for dealing with screen parameters.
 
 %files
+%{_bindir}/kscreen-doctor
 %{_libdir}/qt5/plugins/kf5/kscreen
 %{_libdir}/libexec/kf5/kscreen_backend_launcher
 %{_datadir}/dbus-1/services/org.kde.kscreen.service
