@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libkscreen-5.10.5.tar.xz: 1971d5426ca85af445d034ce9dd4c110ee0db913
+sources:
+  libkscreen-5.12.6.tar.xz: 338a2cdaee0ddfc37c151144701f2df1b17f11e2
